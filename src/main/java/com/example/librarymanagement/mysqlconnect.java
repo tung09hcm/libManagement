@@ -64,7 +64,9 @@ public class mysqlconnect {
                         rs.getString("bookname"),
                         rs.getString("phonenumber"),
                         rs.getDate("returndate"),
-                        Integer.parseInt(rs.getString("status"))
+                        Integer.parseInt(rs.getString("status")),
+                        Integer.parseInt(rs.getString("id"))
+
                         ));
 
             }

@@ -24,6 +24,8 @@ public class RentController implements Initializable {
 
     @FXML
     private TableColumn<rent, String> bookname;
+    @FXML
+    private TableColumn<rent, Integer> id;
 
     @FXML
     private TableColumn<rent, String> phonenumber;
@@ -89,6 +91,7 @@ public class RentController implements Initializable {
         }
     }
     public void Update() {
+        id.setCellValueFactory(new PropertyValueFactory<rent,Integer>("id"));
         studentname.setCellValueFactory(new PropertyValueFactory<rent,String>("studentname"));
         bookname.setCellValueFactory(new PropertyValueFactory<rent,String>("bookname"));
         phonenumber.setCellValueFactory(new PropertyValueFactory<rent,String>("phonenumber"));
@@ -234,8 +237,14 @@ public class RentController implements Initializable {
             conn = mysqlconnect.ConnectDb();
             Statement statement = conn.createStatement();
             String val = txt_book_name.getText();
-            System.out.println("bookname: " + bookname);
-            statement.executeUpdate("delete from jdbc.rent where bookname = '"+val+"'");
+
+            String iddde = id.getCellData(index).toString();
+
+            System.out.println("idde: " + iddde);
+            System.out.println("val: " + val);
+            System.out.println("INDEX: " + index);
+
+            statement.executeUpdate("delete from jdbc.rent where id = '"+iddde+"'");
 
             Statement statement1 = conn.createStatement();
             statement1.executeUpdate("UPDATE jdbc.book SET amount = amount + 1, request = request - 1 WHERE name = '"+val+"'");

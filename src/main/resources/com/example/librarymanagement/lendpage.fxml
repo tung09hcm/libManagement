@@ -37,7 +37,8 @@
       </AnchorPane>
       <TableView fx:id="table" layoutX="285.0" layoutY="168.0" onMouseClicked="#getSelected" prefHeight="523.0" prefWidth="691.0" style="-fx-background-color: #e9edf0;">
         <columns>
-          <TableColumn fx:id="studentname" prefWidth="170.4000244140625" text="Student Name" />
+            <TableColumn fx:id="id" prefWidth="55.199951171875" text="ID" />
+          <TableColumn fx:id="studentname" prefWidth="169.60003662109375" text="Student Name" />
             <TableColumn fx:id="bookname" prefWidth="204.800048828125" text="Book Name" />
             <TableColumn fx:id="phonenumber" prefWidth="125.5999755859375" text="Phone Number" />
             <TableColumn fx:id="returndate" prefWidth="125.5999755859375" text="Return date" />

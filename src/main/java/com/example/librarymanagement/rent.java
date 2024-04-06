@@ -5,14 +5,23 @@ import java.time.LocalDate;
 public class rent {
     String studentname,bookname,phonenumber;
     java.sql.Date returndate;
-    int status;
+    int status, id;
 
-    public rent(String studentname, String bookname, String phonenumber, java.sql.Date returndate, int status) {
+    public rent(String studentname, String bookname, String phonenumber, java.sql.Date returndate, int status, int id) {
         this.studentname = studentname;
         this.bookname = bookname;
         this.phonenumber = phonenumber;
         this.returndate = returndate;
         this.status = status;
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getStudentname() {
