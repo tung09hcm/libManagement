@@ -185,13 +185,14 @@ public class BookController implements Initializable {
         try
         {
             int idd = index+1;
+            String iddde = id.getCellData(index).toString();
             conn = mysqlconnect.ConnectDb();
             String value1 = txt_name.getText();
             String value2 = txt_amount.getText();
             String value3 = txt_request.getText();
             Statement statement = conn.createStatement();
             statement.executeUpdate("update `jdbc`.`book` set name = '"+value1+"', " +
-                    "amount = '"+value2+"', request = '"+value3+"' where idbook = '"+idd+"'");
+                    "amount = '"+value2+"', request = '"+value3+"' where idbook = '"+iddde+"'");
             Update();
             Search_book();
         } catch (SQLException e) {
